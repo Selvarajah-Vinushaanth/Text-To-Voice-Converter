@@ -8,7 +8,7 @@ import { Providers } from "@/components/providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tempo - Modern SaaS Starter",
+  title: "Voicify",
   description: "A modern full-stack starter template powered by Next.js",
 };
 
