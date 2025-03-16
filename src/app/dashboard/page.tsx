@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ClientSubscriptionCheck } from "@/components/client-subscription-check";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/footer";
 import {
   Card,
   CardContent,
@@ -54,83 +55,86 @@ export default function Dashboard() {
 
   return (
     <ClientSubscriptionCheck>
-      <DashboardNavbar />
-      <main className="w-full dark:bg-gray-900">
-        <div className="container mx-auto px-4 py-8 flex flex-col gap-8">
-          {/* Header Section */}
-          <header className="flex flex-col gap-4">
-            <h1 className="text-3xl font-bold dark:text-white">Dashboard</h1>
-            <div className="bg-secondary/50 dark:bg-gray-800/50 text-sm p-3 px-4 rounded-lg text-muted-foreground dark:text-gray-300 flex gap-2 items-center">
-              <InfoIcon size="14" className="dark:text-gray-400" />
-              <span>
-                Welcome to your dashboard. Access all your tools and features
-                here.
-              </span>
-            </div>
-          </header>
+      <div className="min-h-screen flex flex-col dark:bg-gray-900">
+        <DashboardNavbar />
+        <main className="w-full flex-1">
+          <div className="container mx-auto px-4 py-8 flex flex-col gap-8">
+            {/* Header Section */}
+            <header className="flex flex-col gap-4">
+              <h1 className="text-3xl font-bold dark:text-white">Dashboard</h1>
+              <div className="bg-secondary/50 dark:bg-gray-800/50 text-sm p-3 px-4 rounded-lg text-muted-foreground dark:text-gray-300 flex gap-2 items-center">
+                <InfoIcon size="14" className="dark:text-gray-400" />
+                <span>
+                  Welcome to your dashboard. Access all your tools and features
+                  here.
+                </span>
+              </div>
+            </header>
 
-          {/* Quick Actions Section */}
-          <section className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 dark:bg-gray-800 border-blue-100 dark:border-blue-900/50">
-              <CardHeader>
-                <CardTitle className="dark:text-white">Text to Speech Converter</CardTitle>
-                <CardDescription className="dark:text-gray-300">
-                  Convert your text into natural-sounding speech using AI
-                  technology
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-center py-4">
-                  <Volume2 size={64} className="text-blue-500 dark:text-blue-400" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full">
-                  <Link href="/dashboard/text-to-speech">
-                    Go to Converter
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* User Profile Card */}
-            <Card className="dark:border-gray-700 dark:bg-gray-800">
-              <CardHeader>
-                <CardTitle className="dark:text-white">User Profile</CardTitle>
-                <CardDescription className="dark:text-gray-300">
-                  Your account information
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center gap-4 mb-4">
-                  <UserCircle size={48} className="text-primary dark:text-blue-400" />
-                  <div>
-                    <h3 className="font-semibold dark:text-white">
-                      {user.user_metadata?.full_name || user.email}
-                    </h3>
-                    <p className="text-sm text-muted-foreground dark:text-gray-400">
-                      {user.email}
-                    </p>
+            {/* Quick Actions Section */}
+            <section className="grid md:grid-cols-2 gap-6">
+              <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 dark:bg-gray-800 border-blue-100 dark:border-blue-900/50">
+                <CardHeader>
+                  <CardTitle className="dark:text-white">Text to Speech Converter</CardTitle>
+                  <CardDescription className="dark:text-gray-300">
+                    Convert your text into natural-sounding speech using AI
+                    technology
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-center py-4">
+                    <Volume2 size={64} className="text-blue-500 dark:text-blue-400" />
                   </div>
-                </div>
-                <div className="bg-muted/50 dark:bg-gray-700/50 rounded-lg p-4 overflow-hidden">
-                  <div className="text-sm">
-                    <div className="flex justify-between py-1">
-                      <span className="font-medium dark:text-gray-200">Account Type:</span>
-                      <span className="dark:text-gray-300">Free</span>
-                    </div>
-                    <div className="flex justify-between py-1">
-                      <span className="font-medium dark:text-gray-200">Status:</span>
-                      <span className="text-green-600 dark:text-green-400">Active</span>
+                </CardContent>
+                <CardFooter>
+                  <Button asChild className="w-full">
+                    <Link href="/dashboard/text-to-speech">
+                      Go to Converter
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* User Profile Card */}
+              <Card className="dark:border-gray-700 dark:bg-gray-800">
+                <CardHeader>
+                  <CardTitle className="dark:text-white">User Profile</CardTitle>
+                  <CardDescription className="dark:text-gray-300">
+                    Your account information
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center gap-4 mb-4">
+                    <UserCircle size={48} className="text-primary dark:text-blue-400" />
+                    <div>
+                      <h3 className="font-semibold dark:text-white">
+                        {user.user_metadata?.full_name || user.email}
+                      </h3>
+                      <p className="text-sm text-muted-foreground dark:text-gray-400">
+                        {user.email}
+                      </p>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
-        </div>
-      </main>
+                  <div className="bg-muted/50 dark:bg-gray-700/50 rounded-lg p-4 overflow-hidden">
+                    <div className="text-sm">
+                      <div className="flex justify-between py-1">
+                        <span className="font-medium dark:text-gray-200">Account Type:</span>
+                        <span className="dark:text-gray-300">Free</span>
+                      </div>
+                      <div className="flex justify-between py-1">
+                        <span className="font-medium dark:text-gray-200">Status:</span>
+                        <span className="text-green-600 dark:text-green-400">Active</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+          </div>
+        </main>
+        <Footer />
+      </div>
     </ClientSubscriptionCheck>
   );
 }

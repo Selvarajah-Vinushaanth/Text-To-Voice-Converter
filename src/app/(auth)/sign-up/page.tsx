@@ -8,6 +8,7 @@ import Link from "next/link";
 import { SmtpMessage } from "../smtp-message";
 import { signUpAction } from "@/app/actions";
 import ClientNavbar from "@/components/client-navbar";
+import Footer from "@/components/footer";
 import { useState, useEffect } from "react";
 
 interface SignupProps {
@@ -57,7 +58,7 @@ export default function Signup({ searchParams }: SignupProps) {
                   id="full_name"
                   name="full_name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Vinushaanth"
                   required
                   className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
@@ -104,6 +105,7 @@ export default function Signup({ searchParams }: SignupProps) {
         </div>
         <SmtpMessage />
       </div>
+      <Footer />
     </>
   );
 }

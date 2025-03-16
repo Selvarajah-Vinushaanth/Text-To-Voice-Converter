@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { UserCircle, Home, Volume2, LayoutDashboard } from "lucide-react";
+import { UserCircle, Home, Volume2, LayoutDashboard, Mic2 } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -22,8 +22,9 @@ export default function DashboardNavbar() {
     <nav className="w-full border-b border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <Link href="/" prefetch className="text-xl font-bold dark:text-white">
-            VoiceAI
+          <Link href="/" prefetch className="flex items-center gap-2">
+            <Mic2 className="h-6 w-6 text-indigo-500 dark:text-indigo-400" strokeWidth={1.5} />
+            <span className="text-xl font-bold text-gray-900 dark:text-white">Voicify</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-4 ml-8">

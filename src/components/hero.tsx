@@ -20,7 +20,7 @@ export default function Hero() {
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
               Convert your text into natural-sounding speech in seconds. Choose
-              from multiple voices and download as MP3.
+              from multiple voices and download as WAV.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -30,12 +30,12 @@ export default function Hero() {
               >
                 Try It Now
               </Link>
-              <Link
+              {/* <Link
                 href="/pricing"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-lg font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
               >
                 View Pricing
-              </Link>
+              </Link> */}
             </div>
 
             <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-400">
@@ -45,11 +45,11 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>7 premium AI voices</span>
+                <span> premium AI voices</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>Easy MP3 download</span>
+                <span>Easy WAV download</span>
               </div>
             </div>
           </div>

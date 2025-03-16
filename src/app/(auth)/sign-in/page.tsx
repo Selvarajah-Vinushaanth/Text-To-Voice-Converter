@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Footer from "@/components/footer";
 
 interface LoginProps {
   searchParams: { message?: string };
@@ -95,6 +96,7 @@ export default function SignInPage({ searchParams }: LoginProps) {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

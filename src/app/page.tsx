@@ -74,7 +74,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white">Easy Export</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Download high-quality audio files in multiple formats
+                Download high-quality audio files
               </p>
             </div>
           </div>
